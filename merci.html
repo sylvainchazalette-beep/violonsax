@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demande envoyée — Violon Sax Live</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F1EFEA;
+      color: #2D3136;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      max-width: 580px;
+      width: 100%;
+      background: #FAFAFA;
+      border: 1px solid rgba(197, 155, 39, 0.4);
+      border-radius: 20px;
+      padding: clamp(30px, 6vw, 50px);
+      text-align: center;
+      box-shadow: 0 15px 35px -10px rgba(45, 49, 54, 0.1);
+    }
+
+    .icon-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(197, 155, 39, 0.15);
+      border: 1px solid #C59B27;
+      color: #9E7B1A;
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 700;
+      color: #2D3136;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #5C6066;
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    .btn-home {
+      display: inline-block;
+      background: #C59B27;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 8px 18px -4px rgba(197, 155, 39, 0.25);
+    }
+
+    .btn-home:hover {
+      background: #B38E20;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon-badge">✓</div>
+    <h1>Demande bien reçue</h1>
+    <p>Merci pour votre prise de contact. Nous étudions votre projet et nous revenons vers vous sous 24h ouvrées avec une proposition personnalisée.</p>
+    <a href="/" class="btn-home">Retour à l'accueil</a>
+  </div>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #2D3136; color: #F1EFEA; padding: 20px; z-index: 9999; box-shadow: 0 -4px 25px rgba(0,0,0,0.25); border-top: 1px solid rgba(197, 155, 39, 0.4);">
+    <div style="max-width: 950px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; align-items: center; text-align: center;">
+      <div style="font-size: 14px; line-height: 1.5; max-width: 750px;">
+        Nous utilisons des cookies pour améliorer votre expérience sur notre site, mesurer l'audience et vous proposer des services adaptés. Vous pouvez accepter ou refuser leur utilisation à tout moment.
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+        <button id="cookie-accept" style="background: #C59B27; color: #FFFFFF; border: none; padding: 10px 22px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: background 0.2s;">Tout accepter</button>
+        <button id="cookie-refuse" style="background: transparent; color: #F1EFEA; border: 1px solid #787C82; padding: 10px 22px; border-radius: 6px; font-weight: 600; font-size: 13px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: border-color 0.2s;">Tout refuser</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('cookie-accept');
+      const refuseBtn = document.getElementById('cookie-refuse');
+
+      const consent = localStorage.getItem('cookie_consent');
+      if (!consent) {
+        banner.style.display = 'block';
+      }
+
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie_consent', 'accepted');
+        banner.style.display = 'none';
+      });
+
+      refuseBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie_consent', 'refused');
+        banner.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

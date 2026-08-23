@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Violon Sax Live — Cocktail & Inauguration Corporate</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F1EFEA;
+      color: #2D3136;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      font-size: clamp(14px, 0.95vw + 8px, 19px); /* échelle fluide du texte de base, y compris grands écrans TV */
+    }
+
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: clamp(20px, 4vw, 40px) clamp(14px, 4vw, 20px);
+    }
+
+    /* Sur très grands écrans (TV, moniteurs 4K), on laisse le contenu respirer un peu plus large */
+    @media (min-width: 1600px) {
+      .container { max-width: 1200px; }
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, .serif {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.5px;
+    }
+
+    /* HERO SECTION AVEC IMAGE NEUTRE */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(45, 49, 54, 0.85) 0%, rgba(45, 49, 54, 0.75) 100%),
+                  url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80') center/cover;
+      border-radius: 20px;
+      padding: clamp(35px, 8vw, 70px) clamp(20px, 6vw, 40px);
+      margin-bottom: 40px;
+      border: 1px solid rgba(197, 155, 39, 0.4);
+      box-shadow: 0 15px 35px -10px rgba(45, 49, 54, 0.15);
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(197, 155, 39, 0.2);
+      border: 1px solid #C59B27;
+      color: #F3E5AB;
+      padding: 6px 20px;
+      border-radius: 50px;
+      font-size: clamp(10px, 1vw, 11px);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: clamp(14px, 1.6vw, 17px);
+      color: #E2E8F0;
+      max-width: 680px;
+      margin: 0 auto 30px auto;
+      font-weight: 400;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(16px, 4vw, 40px);
+      border-top: 1px solid rgba(197, 155, 39, 0.3);
+      padding-top: 25px;
+      margin-top: 20px;
+    }
+
+    .stat-item { text-align: center; flex: 1 1 140px; min-width: 120px; }
+    .stat-val { font-size: clamp(16px, 2.2vw, 22px); font-weight: 700; color: #E5C158; font-family: 'Cinzel', serif; }
+    .stat-lbl { font-size: 11px; color: #CBD5E1; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+    /* SECTION TITLES */
+    .section-header {
+      text-align: center;
+      margin: 50px 0 30px 0;
+    }
+
+    .section-header h2 {
+      font-size: clamp(21px, 3vw, 27px);
+      color: #2D3136;
+      margin-bottom: 8px;
+    }
+
+    .section-header p {
+      color: #787C82;
+      font-size: 14px;
+    }
+
+    /* GALLERY SECTION */
+    .gallery-section {
+      background: #FAFAFA;
+      border-radius: 16px;
+      padding: clamp(18px, 4vw, 35px);
+      border: 1px solid rgba(197, 155, 39, 0.2);
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px -10px rgba(45, 49, 54, 0.03);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(197, 155, 39, 0.2);
+      height: clamp(180px, 30vw, 240px);
+      background: #F1EFEA;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(45, 49, 54, 0.9), transparent);
+      color: #FFFFFF;
+      padding: 15px 15px 10px 15px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* REPERTOIRE SECTION */
+    .repertoire-section {
+      background: #FAFAFA;
+      border-radius: 16px;
+      padding: clamp(18px, 4vw, 35px);
+      border: 1px solid rgba(197, 155, 39, 0.2);
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px -10px rgba(45, 49, 54, 0.03);
+    }
+
+    .genres-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .genre-box {
+      background: #F1EFEA;
+      padding: 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(197, 155, 39, 0.15);
+    }
+
+    .genre-box h4 {
+      color: #9E7B1A;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .genre-box p {
+      font-size: 13px;
+      color: #4A4E54;
+      line-height: 1.5;
+    }
+
+    /* PRICING CARD */
+    .pricing-container {
+      max-width: 650px;
+      margin: 0 auto 40px auto;
+    }
+
+    .pricing-card {
+      background: #FAFAFA;
+      border-radius: 20px;
+      padding: clamp(24px, 5vw, 40px);
+      border: 1px solid #C59B27;
+      box-shadow: 0 15px 35px -10px rgba(197, 155, 39, 0.12);
+      position: relative;
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: -12px;
+      right: 30px;
+      background: #C59B27;
+      color: #FFFFFF;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+    }
+
+    .price-title { font-size: clamp(19px, 2.5vw, 22px); font-weight: 700; color: #2D3136; }
+    .price-sub { font-size: 13px; color: #787C82; margin-top: 4px; }
+
+    .price-amount {
+      margin: 20px 0;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .price-num { font-size: clamp(32px, 5vw, 40px); font-weight: 700; color: #9E7B1A; font-family: 'Cinzel', serif; }
+    .price-ht { font-size: 13px; color: #787C82; font-weight: 600; }
+
+    .price-features {
+      list-style: none;
+      margin-bottom: 25px;
+    }
+
+    .price-features li {
+      font-size: 14px;
+      color: #4A4E54;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .price-features li::before {
+      content: "◆";
+      color: #C59B27;
+      font-size: 9px;
+      margin-top: 5px;
+    }
+
+    /* REASSURANCE BAR */
+    .reassurance-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      background: #FAFAFA;
+      border: 1px solid rgba(197, 155, 39, 0.2);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 40px;
+      text-align: center;
+      box-shadow: 0 10px 25px -10px rgba(45, 49, 54, 0.02);
+    }
+
+    .reassurance-item h4 { font-size: 13px; color: #2D3136; margin-top: 4px; font-weight: 700; }
+    .reassurance-item p { font-size: 11px; color: #787C82; margin-top: 2px; }
+
+    /* FORM & CTA */
+    .contact-section {
+      background: #FAFAFA;
+      border: 1px solid rgba(197, 155, 39, 0.2);
+      border-radius: 20px;
+      padding: clamp(20px, 4vw, 35px);
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px -10px rgba(45, 49, 54, 0.02);
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.full { grid-column: span 2; }
+
+    .form-group label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #5C6066;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input, .form-group textarea {
+      background: #F1EFEA;
+      border: 1px solid rgba(197, 155, 39, 0.2);
+      border-radius: 8px;
+      padding: 12px;
+      color: #2D3136;
+      font-family: inherit;
+      font-size: 15px; /* >=16px conseillé pour éviter le zoom auto iOS, on reste proche */
+      width: 100%;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #C59B27;
+      background: #FAFAFA;
+    }
+
+    .btn-submit {
+      grid-column: span 2;
+      background: #C59B27;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px -5px rgba(197, 155, 39, 0.25);
+      transition: background 0.2s ease, transform 0.2s ease;
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background: #B38E20;
+      transform: translateY(-1px);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding-top: 25px;
+      border-top: 1px solid rgba(197, 155, 39, 0.2);
+      color: #787C82;
+      font-size: 12px;
+    }
+
+    footer a { color: #9E7B1A; text-decoration: none; font-weight: 600; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ===================== RESPONSIVE : TABLETTES (≤ 1024px) ===================== */
+    @media (max-width: 1024px) {
+      .reassurance-bar {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+    }
+
+    /* ===================== RESPONSIVE : PETITES TABLETTES / GRANDS MOBILES (≤ 768px) ===================== */
+    @media (max-width: 768px) {
+      .hero { border-radius: 16px; }
+      .hero-stats { gap: 20px 28px; }
+
+      .reassurance-bar {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full,
+      .btn-submit {
+        grid-column: span 1;
+      }
+    }
+
+    /* ===================== RESPONSIVE : SMARTPHONES (≤ 480px) ===================== */
+    @media (max-width: 480px) {
+      .container { padding: 16px 12px; }
+
+      .hero { padding: 30px 18px; border-radius: 14px; }
+      .hero-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      .stat-item { flex: none; }
+
+      .gallery-item { height: 200px; }
+
+      .popular-tag {
+        position: static;
+        display: inline-block;
+        margin-bottom: 14px;
+      }
+
+      .pricing-card { padding: 24px 20px; }
+
+      .reassurance-bar {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      footer { font-size: 11px; }
+    }
+
+    /* ===================== RESPONSIVE : GRANDS ÉCRANS / TV (≥ 1600px) ===================== */
+    @media (min-width: 1600px) {
+      .gallery-item { height: 260px; }
+      .contact-section, .gallery-section, .repertoire-section, .pricing-card {
+        padding: 45px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HERO SECTION AVEC IMAGE NEUTRE -->
+    <div class="hero">
+      <span class="hero-badge">Cocktail Corporate & Inauguration</span>
+      <h1>Violon Sax Live</h1>
+      <p>Sublimez vos événements avec l'élégance du Violon et l'énergie du Saxophone. De la scène à la déambulation parmi vos invités, Mathilde & Sylvain apportent une touche musicale unique et raffinée à vos soirées réseau, inaugurations et événements d'entreprise. Déplacement en Bretagne et alentours</p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-val">3h Max</div>
+          <div class="stat-lbl">Présence & Jeu</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">Volume Maîtrisé</div>
+          <div class="stat-lbl">Idéal Networking</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">100% Autonome</div>
+          <div class="stat-lbl">Sonorisation Incluse</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION GALERIE PHOTO -->
+    <div class="gallery-section">
+      <div style="text-align: center; margin-bottom: 15px;">
+        <h2 style="color: #2D3136; font-size: clamp(20px, 3vw, 24px);">Galerie & Ambiance Live</h2>
+        <p style="color: #787C82; font-size: 13px; margin-top: 4px;">Aperçu visuel de nos prestations en conditions réelles</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="6 ans Immobilier de la Baie-15.jpg" alt="Performance Saxophone & Violon en extérieur">
+          <div class="gallery-caption">Duo en plein air & Ambiance Cocktail</div>
+        </div>
+        <div class="gallery-item">
+          <img src="6 ans Immobilier de la Baie-31 2.jpg" alt="Violon solo live">
+          <div class="gallery-caption">L'élégance du Violon en live</div>
+        </div>
+        <div class="gallery-item">
+          <img src="6 ans Immobilier de la Baie-33 10.49.32.jpg" alt="Saxophone live">
+          <div class="gallery-caption">Performance Saxophone pro</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REPERTOIRE -->
+    <div class="repertoire-section">
+      <div style="text-align: center; margin-bottom: 15px;">
+        <h2 style="color: #2D3136; font-size: clamp(20px, 3vw, 24px);">Exemple de Répertoire Live</h2>
+        <p style="color: #787C82; font-size: 13px; margin-top: 4px;">Un mix moderne, chic et dynamique réagencé pour le duo violon & saxophone</p>
+      </div>
+
+      <div class="genres-grid">
+        <div class="genre-box">
+          <h4>Pop & Charts Modernes</h4>
+          <p>Dance The Night (Dua Lipa), Get Lucky (Daft Punk), I Feel It Coming (The Weeknd), Sign of the Times (Harry Styles), Ordinary (Alex Warren)</p>
+        </div>
+        <div class="genre-box">
+          <h4>Solaire & Latine</h4>
+          <p>Señorita (Camila Cabello), Calma (Pedro Capó), Soleil bleu (Luïza)</p>
+        </div>
+        <div class="genre-box">
+          <h4>Electro & Chill House</h4>
+          <p>Jubel (Klingande), Dance Monkey, Relax Take It Easy (Remix), La Vie en Rose (Yann Muller Remix)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING / FORMULE UNIQUE -->
+    <div class="section-header">
+      <h2>Offre Clé en Main</h2>
+      <p>Une prestation claire et sans surcoût caché pour votre événement</p>
+    </div>
+
+    <div class="pricing-container">
+      <div class="pricing-card">
+        <span class="popular-tag">Formule Incontournable</span>
+        <div class="price-title">Cocktail & Event Corporate</div>
+        <div class="price-sub">Idéal pour cocktails d'entreprise, soirées réseau & inaugurations (Bretagne & alentours)</div>
+
+        <div class="price-amount">
+          <span class="price-num">1 600 €</span>
+          <span class="price-ht">TTC</span>
+        </div>
+
+        <ul class="price-features">
+          <li><strong>Déplacements :</strong> Uniquement en Bretagne et alentours</li>
+          <li><strong>Présence sur site :</strong> jusqu'à 3h00 (sets musicaux & pauses intégrées)</li>
+          <li><strong>Musique live :</strong> Duo Violon & Saxophone sur bandes son de qualité pro</li>
+          <li><strong>Déambulation :</strong> Jeu immersif & proximité parmi les invités ou en espace dédié</li>
+          <li><strong>Matériel inclus :</strong> Sonorisation professionnelle compacte adaptée au lieu</li>
+          <li><strong>Micro sans fil :</strong> Mis à disposition pour vos prises de parole & discours</li>
+          <li><strong>Ambiance sur-mesure :</strong> Volume sonore adapté pour favoriser les échanges</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- REASSURANCE -->
+    <div class="reassurance-bar">
+      <div class="reassurance-item">
+        <h4>Gestion du Volume</h4>
+        <p>Musique d'ambiance adaptée aux échanges B2B</p>
+      </div>
+      <div class="reassurance-item">
+        <h4>Facturation Officielle</h4>
+        <p>Contrat d'engagement & facturation d'entreprise</p>
+      </div>
+      <div class="reassurance-item">
+        <h4>Assurance RC Pro</h4>
+        <p>Couverture professionnelle pour tout type de lieu</p>
+      </div>
+    </div>
+
+    <!-- FORMULAIRE DE CONTACT -->
+    <div class="contact-section">
+      <div style="text-align: center; margin-bottom: 15px;">
+        <h2>Vérifier la Disponibilité</h2>
+        <p style="color: #787C82; font-size: 13px;">Recevez une confirmation et une proposition sous 24h ouvrées</p>
+      </div>
+
+      <form class="contact-form" name="contact-violonsax" method="POST" data-netlify="true" action="/merci.html">
+        <div class="form-group">
+          <label for="societe">Entreprise / Structure</label>
+          <input type="text" id="societe" name="societe" required placeholder="Nom de la structure">
+        </div>
+        <div class="form-group">
+          <label for="nom">Nom du Contact</label>
+          <input type="text" id="nom" name="nom" required placeholder="Prénom & Nom">
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail Professionnel</label>
+          <input type="email" id="email" name="email" required placeholder="contact@entreprise.com">
+        </div>
+        <div class="form-group">
+          <label for="telephone">Téléphone</label>
+          <input type="tel" id="telephone" name="telephone" required placeholder="06 00 00 00 00">
+        </div>
+        <div class="form-group">
+          <label for="date">Date de l'événement</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="lieu">Lieu / Ville (Bretagne & alentours)</label>
+          <input type="text" id="lieu" name="lieu" required placeholder="Ex: Rennes, Vannes, Brest, Saint-Malo, Nantes...">
+        </div>
+        <div class="form-group full">
+          <label for="message">Détails (Optionnel)</label>
+          <textarea id="message" name="message" rows="3" placeholder="Horaires souhaités, type de lieu, détails sur l'événement..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Envoyer la demande</button>
+      </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p style="font-size: 15px; color: #2D3136; font-weight: 700; margin-bottom: 8px; font-family: 'Cinzel', serif;">Violon Sax Live — Mathilde & Sylvain</p>
+      <p style="margin-bottom: 12px;">
+        📸 <a href="https://www.instagram.com/violonsaxlive/" target="_blank" rel="noopener">Suivez-nous sur Instagram</a>
+      </p>
+      <p style="font-size: 11px; color: #9A9EAB;">
+        © Violon Sax Live — Animation Musicale Haut de Gamme
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #2D3136; color: #F1EFEA; padding: 20px; z-index: 9999; box-shadow: 0 -4px 25px rgba(0,0,0,0.25); border-top: 1px solid rgba(197, 155, 39, 0.4);">
+    <div style="max-width: 950px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; align-items: center; text-align: center;">
+      <div style="font-size: 14px; line-height: 1.5; max-width: 750px;">
+        Nous utilisons des cookies pour améliorer votre expérience sur notre site, mesurer l'audience et vous proposer des services adaptés. Vous pouvez accepter ou refuser leur utilisation à tout moment.
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+        <button id="cookie-accept" style="background: #C59B27; color: #FFFFFF; border: none; padding: 10px 22px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: background 0.2s;">Tout accepter</button>
+        <button id="cookie-refuse" style="background: transparent; color: #F1EFEA; border: 1px solid #787C82; padding: 10px 22px; border-radius: 6px; font-weight: 600; font-size: 13px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: border-color 0.2s;">Tout refuser</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('cookie-accept');
+      const refuseBtn = document.getElementById('cookie-refuse');
+
+      const consent = localStorage.getItem('cookie_consent');
+      if (!consent) {
+        banner.style.display = 'block';
+      }
+
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie_consent', 'accepted');
+        banner.style.display = 'none';
+      });
+
+      refuseBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie_consent', 'refused');
+        banner.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
