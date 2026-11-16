@@ -367,10 +367,10 @@
 
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(326px, 1fr));
+      grid-template-columns: 1fr;
       gap: 1.5rem;
       margin-top: 20px;
-      justify-content: center;
+      justify-items: center;
     }
 
     .video-card {
@@ -382,6 +382,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
+      max-width: 540px;
     }
 
     .video-card iframe, .video-card .instagram-media {
@@ -485,8 +487,11 @@
     /* ===================== RESPONSIVE : GRANDS ÉCRANS / TV (≥ 1600px) ===================== */
     @media (min-width: 1600px) {
       .gallery-item { height: 260px; }
-      .contact-section, .gallery-section, .repertoire-section, .pricing-card {
+      .contact-section, .gallery-section, .repertoire-section, .pricing-card, .video-section {
         padding: 45px;
+      }
+      .video-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   </style>
