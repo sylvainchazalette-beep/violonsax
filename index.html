@@ -355,6 +355,64 @@
       transform: translateY(-1px);
     }
 
+    /* VIDEO SECTION */
+    .video-section {
+      background: #FAFAFA;
+      border-radius: 16px;
+      padding: clamp(18px, 4vw, 35px);
+      border: 1px solid rgba(197, 155, 39, 0.2);
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px -10px rgba(45, 49, 54, 0.03);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(326px, 1fr));
+      gap: 1.5rem;
+      margin-top: 20px;
+      justify-content: center;
+    }
+
+    .video-card {
+      background: #F1EFEA;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(197, 155, 39, 0.15);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: center;
+    }
+
+    .video-card iframe, .video-card .instagram-media {
+      width: 100% !important;
+      min-width: 100% !important;
+      margin: 0 !important;
+    }
+
+    .video-cta {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid #C59B27;
+      color: #9E7B1A;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      background: #C59B27;
+      color: #FFFFFF;
+    }
+
     /* FOOTER */
     footer {
       text-align: center;
@@ -502,6 +560,32 @@
           <p>Jubel (Klingande), Dance Monkey, Relax Take It Easy (Remix), La Vie en Rose (Yann Muller Remix)</p>
         </div>
       </div>
+    </div>
+
+    <!-- SECTION VIDEO -->
+    <div class="video-section">
+      <div style="text-align: center; margin-bottom: 15px;">
+        <h2 style="color: #2D3136; font-size: clamp(20px, 3vw, 24px);">En live & en vidéo</h2>
+        <p style="color: #787C82; font-size: 13px; margin-top: 4px;">Aperçu de nos prestations en conditions réelles</p>
+      </div>
+
+      <div class="video-grid">
+        <div class="video-card">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfxXQFbRIp3/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DfxXQFbRIp3/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">Voir cette publication sur Instagram</a></div></blockquote>
+        </div>
+        <div class="video-card">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfzkbS8oT39/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DfzkbS8oT39/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">Voir cette publication sur Instagram</a></div></blockquote>
+        </div>
+        <div class="video-card">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DbX52DBoyoG/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DbX52DBoyoG/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">Voir cette publication sur Instagram</a></div></blockquote>
+        </div>
+      </div>
+
+      <div class="video-cta">
+        <a href="https://www.instagram.com/violonsaxlive/" target="_blank" rel="noopener" class="btn-outline">Voir plus de vidéos sur Instagram</a>
+      </div>
+
+      <script async src="https://www.instagram.com/embed.js" onload="if(window.instgrm) { window.instgrm.Embeds.process(); }"></script>
     </div>
 
     <!-- PRICING / FORMULE UNIQUE -->
