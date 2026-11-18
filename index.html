@@ -428,6 +428,88 @@
     footer a { color: #9E7B1A; text-decoration: none; font-weight: 600; }
     footer a:hover { text-decoration: underline; }
 
+    /* TESTIMONIALS SECTION */
+    .testimonials-section {
+      background: #FAFAFA;
+      border-radius: 16px;
+      padding: clamp(18px, 4vw, 35px);
+      border: 1px solid rgba(197, 155, 39, 0.2);
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px -10px rgba(45, 49, 54, 0.03);
+    }
+    .testimonial-featured {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(197, 155, 39, 0.2);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      position: relative;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .testimonial-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(197, 155, 39, 0.15);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .testi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .testi-author {
+      font-weight: 700;
+      color: #2D3136;
+      font-size: 15px;
+    }
+    .testi-badge {
+      background: rgba(197, 155, 39, 0.1);
+      color: #9E7B1A;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(197, 155, 39, 0.3);
+    }
+    .testi-stars {
+      color: #E5C158;
+      font-size: 14px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    .testi-text {
+      font-size: 14px;
+      color: #4A4E53;
+      font-style: italic;
+      line-height: 1.6;
+      padding-left: 15px;
+      position: relative;
+    }
+    .testi-text::before {
+      content: '“';
+      font-family: 'Cinzel', serif;
+      font-size: 40px;
+      color: rgba(197, 155, 39, 0.3);
+      position: absolute;
+      top: -10px;
+      left: -8px;
+      line-height: 1;
+    }
+
     /* ===================== RESPONSIVE : TABLETTES (≤ 1024px) ===================== */
     @media (max-width: 1024px) {
       .reassurance-bar {
@@ -487,7 +569,7 @@
     /* ===================== RESPONSIVE : GRANDS ÉCRANS / TV (≥ 1600px) ===================== */
     @media (min-width: 1600px) {
       .gallery-item { height: 260px; }
-      .contact-section, .gallery-section, .repertoire-section, .pricing-card, .video-section {
+      .contact-section, .gallery-section, .repertoire-section, .pricing-card, .video-section, .testimonials-section {
         padding: 45px;
       }
       .video-grid {
@@ -635,6 +717,61 @@
       <div class="reassurance-item">
         <h4>Assurance RC Pro</h4>
         <p>Couverture professionnelle pour tout type de lieu</p>
+      </div>
+    </div>
+
+    <!-- AVIS ET TEMOIGNAGES -->
+    <div class="testimonials-section">
+      <div style="text-align: center; margin-bottom: 25px;">
+        <h2 style="color: #2D3136; font-size: clamp(20px, 3vw, 24px);">Ce qu'ils en disent</h2>
+        <p style="color: #787C82; font-size: 13px; margin-top: 4px;">Retours d'organisateurs et d'invités sur nos prestations en duo et en solo</p>
+      </div>
+
+      <div class="testimonial-featured">
+        <div class="testi-header">
+          <div class="testi-author">Féeries de l'abbaye</div>
+          <div class="testi-badge">Duo Violon & Sax</div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">« Nous avons accueilli le duo Sylvain et Mathilde dans le cadre de notre manifestation des tables féeriques « Un soir à l’opéra » à l’abbaye de Léhon. Ils nous ont fait voyager à travers divers opéras avec enthousiasme et brio. Un moment plein d’émotion et de magie grâce à leur gentillesse et leur générosité. Le public a été très enthousiaste. Un grand bravo pour l’adaptation du répertoire à notre événement et au site de l’abbaye par le récit en voix off. Nous recommandons ce duo pour vos événements. »</div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testi-header">
+            <div class="testi-author">Melia De Barros</div>
+            <div class="testi-badge">Violon — Mathilde</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">« Mathilde a été tout simplement incroyable lors de ma soirée de lancement ! Au-delà de son immense talent, c’est une artiste d’une douceur et d’une gentillesse rares. Sa musique a captivé tous mes invités et a véritablement marqué les cœurs. Merci encore Mathilde pour ce moment magique, à très vite pour de futurs événements ! »</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testi-header">
+            <div class="testi-author">VGRF OUEST</div>
+            <div class="testi-badge">Saxophone — Sylvain</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">« Nous avons beaucoup de plaisir à travailler avec Sylvain pour nos différentes marques. Sylvain est professionnel et très agréable. Merci Sylvain ! »</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testi-header">
+            <div class="testi-author">Oxana Semenova</div>
+            <div class="testi-badge">Violon — Mathilde</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">« Mathilde sait toucher nos cœurs dès les premières notes de violon. J’ai le bonheur de la côtoyer régulièrement et suis témoin de ses nombreuses prestations : dans les réseaux professionnels, lors de mariages et d’autres cérémonies. Artiste rennaise d’exception, Mathilde sublime chaque événement avec une finesse incroyable, un talent indéniable et une bonne humeur contagieuse. Au-delà de son talent musical, c’est une entrepreneuse passionnée, capable de s’adapter à tous les contextes. Je la recommande les yeux fermés pour faire vibrer vos événements avec authenticité et élégance. »</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testi-header">
+            <div class="testi-author">Mélina Boudeau</div>
+            <div class="testi-badge">Saxophone — Sylvain</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">« Super saxophoniste ! Il a mis une ambiance incroyable pour la soirée de départ en retraite. Très pro, à l’écoute, et il a vraiment fait vibrer les invités. Tout le monde a adoré. Nous recommandons à 100 % ! »</div>
+        </div>
       </div>
     </div>
 
